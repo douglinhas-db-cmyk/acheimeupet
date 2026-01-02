@@ -3,7 +3,7 @@
 // ===============================================================
 // • CÓDIGO COMPLETO E FIEL AO ORIGINAL.
 // • AJUSTADO: Redirecionamento direto para os links do Asaas conforme plano escolhido.
-// • CORRIGIDO: VALORES MENSAIS (2+ PETS = 19,90 CADA)
+// • CORRIGIDO: VALORES MENSAIS (2+ PETS = 14,90 CADA)
 // • OTIMIZAÇÃO: Compressão agressiva de imagem para reduzir o payload Base64.
 // ===============================================================
 
@@ -138,15 +138,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let valor = 0;
 
     if (plano === "individual") {
-      valor = per === "mensal" ? 24.9 : 249.9;
+      valor = per === "mensal" ? 19.9 : 199.9;
     } else {
       // família
       if (per === "mensal") {
-        // CORREÇÃO: 1 pet = 24,90 | 2+ pets = 19,90 cada
-        valor = qtd === 1 ? 24.9 : (qtd * 19.9);
+        // CORREÇÃO: 1 pet = 14,90 | 2+ pets = 14,90 cada
+        valor = qtd === 1 ? 19.9 : (qtd * 14.9);
       } else {
         // anual (já estava correto)
-        valor = qtd === 1 ? 249.9 : (qtd * 199.9);
+        valor = qtd === 1 ? 199.9 : (qtd * 149.9);
       }
     }
 
@@ -229,10 +229,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let valor = 0;
         if (!temToken) {
-          if (plano === "individual") valor = per === "mensal" ? 24.9 : 249.9;
+          if (plano === "individual") valor = per === "mensal" ? 19.9 : 199.9;
           else valor = per === "mensal"
-            ? (qtd === 1 ? 24.9 : qtd * 19.9)
-            : (qtd === 1 ? 249.9 : qtd * 199.9);
+            ? (qtd === 1 ? 19.9 : qtd * 14.9)
+            : (qtd === 1 ? 199.9 : qtd * 149.9);
         }
 
         const pets = [];
